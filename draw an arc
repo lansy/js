@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+	<canvas id="canvas"  style="border:1px solid #aaa; display:block; margin：50px auto;" ></canvas>
+	<script>
+
+		
+		window.onload = function(){
+			var canvas = document.getElementById('canvas');
+			canvas.width = 1024;
+			canvas.height = 768;
+			var context = canvas.getContext("2d");
+
+			context.lineWidth = 5;
+			context.strokeStyle = "#ff00ff";
+
+			context.fillStyle = "#ff00ff";
+			for( var i = 0 ; i < 10; i++){
+				context.beginPath();
+				context.arc(50 + i*100, 60, 40, 0, 2*Math.PI*(i+1)/10);
+				context.closePath();
+
+				context.stroke();
+				context.fill();
+			}
+
+			
+
+			context.fillStyle = "#ff00ff";
+			for( var i = 0 ; i < 10; i++){
+				context.beginPath();//不一定要成对出现
+				context.arc(50 + i*100, 180, 40, 0, 2*Math.PI*(i+1)/10);
+				
+
+				
+				context.fill();
+			}
+
+			
+		}
+
+	</script>
+<!--
+	<canvas id="canvas"></canvas>
+	<script>
+		window.onload = function(){
+			var canvas = document.getElementById('canvas');
+			var context = canvas.getContext("2d");
+			context.line//绘直线
+			context.moveTo(x,y);
+			context.lineTo(x,y);
+			context.lineWidth =  ;//直线宽
+			context.stroke();//调用
+			context.fillStyle = "";//填充着色
+			context.strokeStyle = "";//给直线着色
+			context.fill();
+			context.beginPath();//隔开颜色，放在画的起始位置
+			context.closePath();//隔开颜色，放在画的结束位置
+			
+			Draw an arc //绘弧线
+			context.arc(
+				centerx,centery,radius,
+				startingAngle,endingAngle,
+				anticlockwise = false
+			)//弧线里的位置坐标点
+	}
+	</script>
+-->
+</body>
+</html>
